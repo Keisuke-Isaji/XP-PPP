@@ -1,0 +1,4 @@
+package smartHome
+
+class FakeSmartphone {
+}
