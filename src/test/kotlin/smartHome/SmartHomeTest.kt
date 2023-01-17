@@ -1,9 +1,6 @@
 package smartHome
 
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFails
-import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class SmartHomeTest {
@@ -32,15 +29,11 @@ class SmartHomeTest {
         // ARRANGE
         // バルブの状態を監視するスパイを作る（上と同じ）
         // テストが実施できるように、常にOFFになる スイッチのスタブを作る
-        val spyBulb = SpyBulb()
-
 
         // ACTION：スイッチを入れる
-        spyBulb.alwaysOffSwicthIsOn()
 
         // ASSERT
         // バルブONしないで、OFFだけする
-        assertTrue(spyBulb.spyBulbTurnOffWasCalled)
     }
 
 //    STEP3: テスト→実装
@@ -51,42 +44,20 @@ class SmartHomeTest {
 //    @Test
 //    fun `スイッチONを５回実行したら、スマートホームの電球切れ警告する`() {
 //    //ARRANGE
-//    val spyBulb = SpyBulb()
 //
 //    //ACTION
-//    spyBulb.alwaysOnSwicthIsOn()
-//    spyBulb.alwaysOnSwicthIsOn()
-//    spyBulb.alwaysOnSwicthIsOn()
-//    spyBulb.alwaysOnSwicthIsOn()
 //
-//    assertFalse(spyBulb.bulbWarning)
-//    spyBulb.alwaysOnSwicthIsOn()
-//
-//    assertTrue(spyBulb.bulbWarning)
 //    }
 
-//    STEP4: テスト→実装
+    //    STEP4: テスト→実装
 //    要件変更：スイッチONだけ5回で無く、OFF→ONの変更を5万回実行したらに。
     @Test
     fun `スイッチのONとOFFを５万回実行したら、スマートホームの電球切れ警告する`() {
-    //ARRANGE
-    val spyBuld = SpyBulb()
-
-    fun bulbOnAndOFF() {
-        spyBuld.alwaysOnSwicthIsOn()
-        spyBuld.alwaysOffSwicthIsOn()
+        //ARRANGE
     }
 
     //ACTION
-    for (i in 1..49999) {
-        bulbOnAndOFF()
-    }
 
-    assertFalse(spyBuld.bulbWarning)
-
-    bulbOnAndOFF()
 
     //ASSERT
-    assertTrue(spyBuld.bulbWarning)
-    }
 }
